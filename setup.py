@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'mypkg1'
+package_name = 'mypkg'
 
 setup(
     name=package_name,
