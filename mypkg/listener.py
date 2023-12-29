@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2023 kouzou2111
+# SPDX-License-Identifier: BSD-3-clause
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int16
