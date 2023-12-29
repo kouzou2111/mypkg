@@ -5,7 +5,7 @@ from std_msgs.msg import Int16
 class Listener(Node):
     def __init__(self):
         super().__init__("listener")
-        self.pub = self.create_publisher(Int16, "counyup", self.cb, 10)
+        self.sub = self.create_publisher(Int16, "countup", self.cb, 10)
     
     def cb(self, msg):
         self.get_logger().info("Listen:%d"%msg.data)
