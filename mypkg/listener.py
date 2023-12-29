@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int16
 
-class Lstener(Node):
+class Listener(Node):
     def __init__(self):
         super().__init__("listener")
         self.pub = node.create_publisher(Int16, "counyup", self.cb, 10)
