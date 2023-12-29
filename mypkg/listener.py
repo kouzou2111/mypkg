@@ -11,5 +11,5 @@ class Listener(Node):
         self.get_logger().info("Listen:%d"%msg.data)
 
 rclpy.init()
-node = listener
+node = Listener
 rclpy.spin(node)
