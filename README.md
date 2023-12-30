@@ -11,37 +11,57 @@
 
 ## talkerの概要
 
-実行すると0.5秒間隔で0から1ずつ足した値を結果に送信する。t送信
+実行すると0.5秒間隔で0から1ずつ足した値を送信する。talker単体では送信中の値を確認することができない。
 
 ## 使用方法
 
 ```bash
-$ seq 10 | ./plus
-55
+$ ros2 run mypkg talker
 ```
-## osaisenコマンドの概要
+## listenerの概要
 
-標準入力から数字(1~10000)を読み込むとおみくじ、相性のいい星座、相性のいい血液型、ラッキーカラー、ラッキーアイテムを独立したファイルからランダムで取り出し出力する。
-（ヒント：貢ぐお金の額によって若干排出されるおみくじの確率が変動する）
+実行するとtalkerが可動しているとき送信した値を受信することができる。talkerと並列して実行する場合は別の端末から実行する必要がある。
 
 ## 使用方法
 
 ```bash
-$ ./osaisen 500 # <-1~10000 円入れる、例として500を入れる
-
-どうも
-
-おみくじの結果： 末吉
-
-相性がいい星座： 水瓶座
-
-相性がいい血液型： O型
-
-ラッキーカラー： 茶色
-
-ラッキーアイテム： 本
+$ ros2 run mypkg listener
+[INFO] [1703905159.253466126] [listener]: Listen:0
+[INFO] [1703905159.736600482] [listener]: Listen:1
+[INFO] [1703905160.237778361] [listener]: Listen:2
+[INFO] [1703905160.737473958] [listener]: Listen:3
+[INFO] [1703905161.237584810] [listener]: Listen:4
+[INFO] [1703905161.737528567] [listener]: Listen:5
+[INFO] [1703905162.237059324] [listener]: Listen:6
+[INFO] [1703905162.737383335] [listener]: Listen:7
+[INFO] [1703905163.237154692] [listener]: Listen:8
+[INFO] [1703905163.736449315] [listener]: Listen:9
+[INFO] [1703905164.237330613] [listener]: Listen:10
 ```
 
+## launchの概要
+
+talkerとlistenerの機能を一つにまとめ同時に実行できるようにしたもの
+
+## 使用方法
+
+```bash
+[INFO] [launch]: All log files can be found below /home/fass1080/.ros/log/2023-12-30-12-07-24-810757-DESKTOP-TTGLLEK-237
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [talker-1]: process started with pid [239]
+[INFO] [listener-2]: process started with pid [241]
+[listener-2] [INFO] [1703905645.589176274] [listener]: Listen:0
+[listener-2] [INFO] [1703905646.080160831] [listener]: Listen:1
+[listener-2] [INFO] [1703905646.580714971] [listener]: Listen:2
+[listener-2] [INFO] [1703905647.080237070] [listener]: Listen:3
+[listener-2] [INFO] [1703905647.580660883] [listener]: Listen:4
+[listener-2] [INFO] [1703905648.080767021] [listener]: Listen:5
+[listener-2] [INFO] [1703905648.580512568] [listener]: Listen:6
+[listener-2] [INFO] [1703905649.080447016] [listener]: Listen:7
+[listener-2] [INFO] [1703905649.580470320] [listener]: Listen:8
+[listener-2] [INFO] [1703905650.080597975] [listener]: Listen:9
+[listener-2] [INFO] [1703905650.580411385] [listener]: Listen:10
+```
 
 ## 動作環境
 ### 必要なソフトウェア　
