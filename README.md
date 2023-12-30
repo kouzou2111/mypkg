@@ -1,17 +1,19 @@
 # mypkg
 [![test](https://github.com/kouzou2111/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/kouzou2111/mypkg/actions/workflows/test.yml)
 
-2023年ロボットシステム学講義用ROS 2パッケージのリポジトリです。
+このリポジトリは2023年ロボットシステム学講義で作成したノード間で通信を行うROS2パッケージです。
 
-## リポジトリ内で使用できるノード
 
+## リポジトリ内のプログラム
+* ノード
 ・talker.py
 
 ・listener.py
 
+* launchファイル
 ・talk_listen.launch.py
 
-## 使用手順
+## インストール方法
 下記のコードをターミナルで実行してください
 ```
 $ cd ~/ros2_ws/src
@@ -24,7 +26,7 @@ $ colcon build
 
 実行すると0.5秒間隔で0から1ずつ足した値をInt16型のメッセージとしてcountupトピックを通じてパブリッシュする。
 
-## 使用方法
+* 使用方法
 
 ```bash
 $ ros2 run mypkg talker
@@ -33,7 +35,7 @@ $ ros2 run mypkg talker
 
 実行するとcountupトピックを通じてメッセージをサブスクライブした端末で受信することができる。talkerと並列して実行する場合は別の端末から実行する必要がある。
 
-## 使用方法
+* 使用方法
 
 ```bash
 $ ros2 run mypkg listener
@@ -54,7 +56,7 @@ $ ros2 run mypkg listener
 
 talkerとlistenerの２つのノードを同時に実行できるようにしたもの。
 
-## 使用方法
+* 使用方法
 
 ```bash
 ros2 launch mypkg talk_listen.launch.py
