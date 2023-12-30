@@ -11,6 +11,12 @@
 
 ・talk_listen.launch.py
 
+## 使用手順
+下記のコードをホームディレクトリでクローンすることで利用できます
+```
+git clone https://github.com/kouzou2111/mypkg.git
+```
+
 ## talkerの概要
 
 実行すると0.5秒間隔で0から1ずつ足した値をメッセージとしてcountupトピックを通じてパブリッシュする。talker単体では送信中の値を確認することができない。
@@ -64,12 +70,6 @@ ros2 launch mypkg talk_listen.launch.py
 [listener-2] [INFO] [1703905649.580470320] [listener]: Listen:8
 [listener-2] [INFO] [1703905650.080597975] [listener]: Listen:9
 [listener-2] [INFO] [1703905650.580411385] [listener]: Listen:10
-```
-
-## 使用手順
-下記のコードをホームディレクトリでクローンすることで利用できます
-```
-git clone https://github.com/kouzou2111/mypkg.git
 ```
 
 ## 動作環境
