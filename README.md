@@ -1,28 +1,17 @@
 # mypkg
-[![test](https://github.com/kouzou2111/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/kouzou2111/robosys2023/actions/workflows/test.yml)
+[![test](https://github.com/kouzou2111/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/kouzou2111/mypkg/actions/workflows/test.yml)
 
 2023年ロボットシステム学講義用リポジトリ
 
-## コマンド使用までの手順
-下記のコードをホームディレクトリでクローンすることで利用できます
-```
-git clone https://github.com/kouzou2111/mypkg.git
-```
-㏅コマンドを使いmypkgディレクトリに移動してください
-```
-cd mypkg
-```
-使用したいコマンドを下記の方法で選択してください
+## リポジトリ内で使用できるノード
 
-## リポジトリ内で使用できるコマンド
+・talker
 
-・plus
+・listener
 
-・osaisen
+## talkerの概要
 
-## plusコマンドの概要
-
-標準入力から読み込んだ数値を足す
+実行すると0.5秒間隔で0から1ずつ足した値を結果に送信する。t送信
 
 ## 使用方法
 
