@@ -16,14 +16,6 @@
 
   talk_listen.launch.py
 
-## インストール方法
-下記のコードをターミナルで実行してください
-```
-$ cd ~/ros2_ws/src
-$ git clone https://github.com/kouzou2111/mypkg.git
-$ cd ~/ros2_ws
-$ colcon build
-```
 
 ## talkerの概要
 
@@ -89,9 +81,6 @@ ros2 launch mypkg talk_listen.launch.py
 ### テスト環境
 * ubuntu 22.04.2 LTS
 * ROS2 humble
-
-### 利用したコンテナ
-[コンテナ](https://hub.docker.com/layers/ryuichiueda/ubuntu22.04-ros2/latest/images/sha256-0e1773bc6f12b57172c8818aac36aeb97ca13269028028d49ad5f6f8cc0d6204?context=explore)このコンテナは上田隆一准教授がUbuntu 22.04 LTSにROS 2の環境をセットアップし他人がテストを行えるようにしたもの
 
 ## ライセンス
 * このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
