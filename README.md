@@ -3,15 +3,17 @@
 
 2023年ロボットシステム学講義用リポジトリ
 
-## リポジトリ内で使用できるノード
+## リポジトリ内で使用できるコマンド
 
-・talker
+・talker.py
 
-・listener
+・listener.py
+
+・talk_listen.launch.py
 
 ## talkerの概要
 
-実行すると0.5秒間隔で0から1ずつ足した値を送信する。talker単体では送信中の値を確認することができない。
+実行すると0.5秒間隔で0から1ずつ足した値をメッセージとしてcountupトピックを通じてパブリッシュする。talker単体では送信中の値を確認することができない。
 
 ## 使用方法
 
@@ -20,7 +22,7 @@ $ ros2 run mypkg talker
 ```
 ## listenerの概要
 
-実行するとtalkerが可動しているとき送信した値を受信することができる。talkerと並列して実行する場合は別の端末から実行する必要がある。
+実行するとtalkerが可動しているときcountupトピックを通じてメッセージをサブスクライブした端末で受信することができる。talkerと並列して実行する場合は別の端末から実行する必要がある。
 
 ## 使用方法
 
@@ -39,13 +41,14 @@ $ ros2 run mypkg listener
 [INFO] [1703905164.237330613] [listener]: Listen:10
 ```
 
-## launchの概要
+## talk_listen.launchの概要
 
 talkerとlistenerの機能を一つにまとめ同時に実行できるようにしたもの
 
 ## 使用方法
 
 ```bash
+ros2 launch mypkg talk_listen.launch.py
 [INFO] [launch]: All log files can be found below /home/fass1080/.ros/log/2023-12-30-12-07-24-810757-DESKTOP-TTGLLEK-237
 [INFO] [launch]: Default logging verbosity is set to INFO
 [INFO] [talker-1]: process started with pid [239]
@@ -63,18 +66,27 @@ talkerとlistenerの機能を一つにまとめ同時に実行できるように
 [listener-2] [INFO] [1703905650.580411385] [listener]: Listen:10
 ```
 
+## 使用手順
+下記のコードをホームディレクトリでクローンすることで利用できます
+```
+git clone https://github.com/kouzou2111/mypkg.git
+```
+
 ## 動作環境
 ### 必要なソフトウェア　
-
 * python
   * テスト済み: 3.7~3.10
 
 
 ### テスト環境
-* Ubuntu 20.04 on Windows
+* ubuntu 22.04.2 LTS
+  * ROS2 humble
+
+### 利用したコンテナ
+上田隆一[コンテナ](https://hub.docker.com/layers/ryuichiueda/ubuntu22.04-ros2/latest/images/sha256-0e1773bc6f12b57172c8818aac36aeb97ca13269028028d49ad5f6f8cc0d6204?context=explore)
 
 ## ライセンス
 * このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
-    * このパッケージのosaisen,omikuzi.txt,omikuzi2.txt,omikuzi3.txt,omikuzi4.txt,ketueki.txt,color.txt,item.txt,osaisentest.bash以外のコマンドとコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
-         * [ryuichiueda/my_slides robosys_2022](https://ryuichiueda.github.io/my_slides/robosys_2022/lesson3.html#/12)
+    * このパッケージのtest.ymlのpythonのバージョンテスト部分以外のコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
+         * [ryuichiueda/my_slides robosys_2022](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2022)
     * © 2023 kouzou2111
