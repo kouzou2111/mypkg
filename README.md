@@ -3,7 +3,7 @@
 
 2023年ロボットシステム学講義用リポジトリ
 
-## リポジトリ内で使用できるコマンド
+## リポジトリ内で使用できるノード
 
 ・talker.py
 
@@ -12,14 +12,17 @@
 ・talk_listen.launch.py
 
 ## 使用手順
-下記のコードをホームディレクトリでクローンすることで利用できます
+下記のコードをターミナルで実行してください
 ```
-git clone https://github.com/kouzou2111/mypkg.git
+$ cd ~/ros2_ws/src
+$ git clone https://github.com/kouzou2111/mypkg.git
+$ cd ~/ros2_ws
+$ colcon build
 ```
 
 ## talkerの概要
 
-実行すると0.5秒間隔で0から1ずつ足した値をメッセージとしてcountupトピックを通じてパブリッシュする。talker単体では送信中の値を確認することができない。
+実行すると0.5秒間隔で0から1ずつ足した値をメッセージとしてcountupトピックを通じてパブリッシュする。
 
 ## 使用方法
 
@@ -80,7 +83,7 @@ ros2 launch mypkg talk_listen.launch.py
 
 ### テスト環境
 * ubuntu 22.04.2 LTS
-  * ROS2 humble
+* ROS2 humble
 
 ### 利用したコンテナ
 上田隆一[コンテナ](https://hub.docker.com/layers/ryuichiueda/ubuntu22.04-ros2/latest/images/sha256-0e1773bc6f12b57172c8818aac36aeb97ca13269028028d49ad5f6f8cc0d6204?context=explore)
