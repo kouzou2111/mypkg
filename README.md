@@ -22,7 +22,7 @@ $ colcon build
 
 ## talkerの概要
 
-実行すると0.5秒間隔で0から1ずつ足した値をメッセージとしてcountupトピックを通じてパブリッシュする。
+実行すると0.5秒間隔で0から1ずつ足した値をInt16型のメッセージとしてcountupトピックを通じてパブリッシュする。
 
 ## 使用方法
 
@@ -31,7 +31,7 @@ $ ros2 run mypkg talker
 ```
 ## listenerの概要
 
-実行するとtalkerが可動しているときcountupトピックを通じてメッセージをサブスクライブした端末で受信することができる。talkerと並列して実行する場合は別の端末から実行する必要がある。
+実行するとcountupトピックを通じてメッセージをサブスクライブした端末で受信することができる。talkerと並列して実行する場合は別の端末から実行する必要がある。
 
 ## 使用方法
 
@@ -52,7 +52,7 @@ $ ros2 run mypkg listener
 
 ## talk_listen.launchの概要
 
-talkerとlistenerの機能を一つにまとめ同時に実行できるようにしたもの
+talkerとlistenerの２つのノードを同時に実行できるようにしたもの。
 
 ## 使用方法
 
@@ -86,7 +86,7 @@ ros2 launch mypkg talk_listen.launch.py
 * ROS2 humble
 
 ### 利用したコンテナ
-上田隆一[コンテナ](https://hub.docker.com/layers/ryuichiueda/ubuntu22.04-ros2/latest/images/sha256-0e1773bc6f12b57172c8818aac36aeb97ca13269028028d49ad5f6f8cc0d6204?context=explore)
+[コンテナ](https://hub.docker.com/layers/ryuichiueda/ubuntu22.04-ros2/latest/images/sha256-0e1773bc6f12b57172c8818aac36aeb97ca13269028028d49ad5f6f8cc0d6204?context=explore)このコンテナは上田隆一准教授がUbuntu 22.04 LTSにROS 2の環境をセットアップし他人がテストを行えるようにしたもの
 
 ## ライセンス
 * このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
