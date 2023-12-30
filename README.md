@@ -7,14 +7,14 @@
 ## リポジトリ内のプログラム
 * ノード
 
-・talker.py
+  talker.py
 
-・listener.py
+  listener.py
 
 
 * launchファイル
 
-・talk_listen.launch.py
+  talk_listen.launch.py
 
 ## インストール方法
 下記のコードをターミナルで実行してください
